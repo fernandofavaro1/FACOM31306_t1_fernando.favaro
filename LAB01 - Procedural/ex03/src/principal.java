@@ -1,5 +1,6 @@
 import java.io.Reader;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class principal {
 
@@ -271,6 +272,35 @@ public static void ex003(String args) {
 
     }
 
+    public static void ex8(){
+        float v[] = new float[4];
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < 5; i++){
+            System.out.printf("\nDigite o valor %d: ",i + 1);
+            v[i] = sc.nextInt();
+        }
+
+        float soma = 0;
+
+        for (int i = 0; i < 5; i++){
+            soma = soma + v[i];
+        }
+
+        float media = soma/5;
+
+        float desvio_padrao;
+
+        for (int i = 0; i < 5; i++){
+            soma = 0;
+            soma = soma + (v[i] - media) * (v[i] - media);
+        }
+
+        desvio_padrao = sqrt(soma/5-1);
+
+        System.out.printf("A media eh %f e o desvio padrao eh %f", media, desvio_padrao);
+
+    }
     public static void ex9() {
         int max = 100;
         int n;
@@ -428,101 +458,116 @@ public static void ex003(String args) {
         if (pV == maior) System.out.printf(" <<<A maior>>>");
 }
 
-public static void ex13(){
-    int v[] = new int[4];
+    public static void ex13(){
+        int v[] = new int[4];
 
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-    for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++){
         System.out.printf("Digite o numero %d: ", i + 1);
         v[i] = sc.nextInt();
         if (v[i] < 0) v[i] = 0;
-    }
+        }
 
-    System.out.printf("Zerando os numeros negativos, obtem-se:");
-    for (int i = 0; i < 5; i++)
+        System.out.printf("Zerando os numeros negativos, obtem-se:");
+        for (int i = 0; i < 5; i++)
         System.out.printf(" %d", v[i]);
-}
-
-public static void ex14(){
-    int max = 10000;
-
-    Scanner sc = new Scanner(System.in);
-
-    int n;
-
-    System.out.printf("Digite o numero de alunos: ");
-    n = sc.nextInt();
-
-    int matricula[] = new int[n];
-    char classe[] = new char[n];
-    int cra[] = new int [n];
-
-    for (int i = 0; i < n; i ++){
-        System.out.printf("\nDigite a matricula do aluno %d:", i + 1);
-        matricula[i] = sc.nextInt();
-        System.out.printf("\nDigite a classe social do aluno %d: ", i + 1);
-        classe[i] = sc.nextChar();
-        System.out.printf("\nDigite o cra do aluno %d: ", i + 1);
-        cra[i] = sc.nextInt();
     }
 
-    System.out.printf("=====Alunos Cadastrados=====");
+    public static void ex14(){
+        int max = 10000;
 
-    for (int i = 0; i < n; i++){
-        System.out.printf("Matricula: %d Classe social: %d Cra: %d\n", matricula[i], classe[i], cra [i]);
-    }
-}
-public static void ex15(){
-    int v[] = new int[7];
-    int v1[] = new int[7];
-    int k = 0;
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-    for (int i = 0; i < 8; i++){
-        System.out.printf("Digite o valor do numero %d: ", i + 1);
-        v[i] = sc.nextInt();
-    }
+        int n;
 
-    for (int i = 0; i < 7; i ++){
-        for (int j = i + 1; j < 8; j++){
-            if (v[i] == v[j]) {
-                v1[i] = v[i];
-                k++;
-            }
+        System.out.printf("Digite o numero de alunos: ");
+        n = sc.nextInt();
+
+        int matricula[] = new int[n];
+        char classe[] = new char[n];
+        int cra[] = new int [n];
+
+        for (int i = 0; i < n; i ++){
+            System.out.printf("\nDigite a matricula do aluno %d:", i + 1);
+            matricula[i] = sc.nextInt();
+            System.out.printf("\nDigite a classe social do aluno %d: ", i + 1);
+            classe[i] = sc.nextChar();
+            System.out.printf("\nDigite o cra do aluno %d: ", i + 1);
+            cra[i] = sc.nextInt();
+        }
+
+        System.out.printf("=====Alunos Cadastrados=====");
+
+        for (int i = 0; i < n; i++){
+            System.out.printf("Matricula: %d Classe social: %d Cra: %d\n", matricula[i], classe[i], cra [i]);
         }
     }
 
-    System.out.printf("Valores repetidos:");
-    for (int i = 0; i < k; i++){
-        System.out.printf(" %d", v1[i]);
-    }
-}
+    public static void ex15(){
+        int v[] = new int[7];
+        int repeticoes[] = new int[7];
+        Scanner sc = new Scanner(System.in);
 
-public static void ex16(){
-    int v[] = new int[7];
-    int v1[] = new int[7];
-    int k = 0;
-    Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 8; i++){
+            System.out.printf("Digite o valor do numero %d: ", i + 1);
+            v[i] = sc.nextInt();
+        }
 
-    for (int i = 0; i < 8; i++){
-        System.out.printf("Digite o valor do numero %d: ", i + 1);
-        v[i] = sc.nextInt();
-    }
+        for (int i = 0; i < 8; i ++){
+            for (int j = 0; j < 8; j++){
+                if (v[i] == v[j]) {
+                    repeticoes[i]++;
+                }
+            }
+        }
 
-    for (int i = 0; i < 7; i ++){
-        for (int j = i + 1; j < 8; j++){
-            if (v[i] == v[j]) {
-                v1[i] = v[i];
-                k++;
+        System.out.printf("Os valores repetidos sao:");
+        for (int i = 0; i < 8; i++){
+            int exibido = 0;
+            for (int j = 0; j < i; j++){
+                if (v[i] == v[j]){
+                    exibido = 1;
+                    break;
+                }
+            }
+            if (exibido == 0){
+                if (repeticoes[i] > 1)
+                    System.out.printf(" %d\n", v[i]);
             }
         }
     }
+    public static void ex16(){
+        int v[] = new int[7];
+        int repeticoes[] = new int[7];
+        Scanner sc = new Scanner(System.in);
 
-    System.out.printf("Valores repetidos:");
-    for (int i = 0; i < k; i++){
-        System.out.printf(" %d", v1[i]);
+        for (int i = 0; i < 8; i++){
+            System.out.printf("Digite o valor do numero %d: ", i + 1);
+            v[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < 8; i ++){
+            for (int j = 0; j < 8; j++){
+                if (v[i] == v[j]) {
+                    repeticoes[i]++;
+                }
+            }
+        }
+
+        for (int i = 0; i < 8; i++){
+            int exibido = 0;
+            for (int j = 0; j < i; j++){
+                if (v[i] == v[j]){
+                    exibido = 1;
+                    break;
+                }
+            }
+            if (exibido == 0){
+                if (repeticoes[i] > 1)
+                    System.out.printf("%d aprece %d vezes\n", v[i], repeticoes [i]);
+            }
+        }
     }
-}
 
 }
