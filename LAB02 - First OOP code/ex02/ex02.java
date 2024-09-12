@@ -75,13 +75,13 @@ public class candidatos {
     }
 
     public void exibir_informacoes () {
-        System.out.printf("Nome: ", + nome);
-        System.out.printf("Data de nascimento: ", + data_de_nascimento);
-        System.out.printf("Genero: ", + genero);
-        System.out.printf("Bens: ", + bens);
-        System.out.printf("Candidato a reeleicao?: ", + reeleicao);
-        System.out.printf("Numero do partido: ", + n_partido);
-        System.out.printf("Cargo: ", + cargo);
-        System.out.printf("------------------------------------------------------------------------");
+        System.out.println("Nome: ", + nome);
+        System.out.println("Data de nascimento: ", + data_de_nascimento);
+        System.out.println("Genero: ", + genero);
+        System.out.println("Bens: ", + bens);
+        System.out.println("Candidato a reeleicao?: ", + reeleicao);
+        System.out.println("Numero do partido: ", + n_partido);
+        System.out.println("Cargo: ", + cargo);
+        System.out.println("------------------------------------------------------------------------");
     }
 }
