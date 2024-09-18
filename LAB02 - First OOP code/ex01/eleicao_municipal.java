@@ -1,12 +1,12 @@
 public class eleicao_municipal {
-    public static void (String[] args) {
+    public static void main(String[] args) {
         candidatos candidatos1 = new candidatos(
             "Ana Lucia Alves da Silva",
             "01/06/1973",
             "Feminino",
-            "0",
+            0,
             "Nao",
-            "44",
+            44,
             "Vereador"
         );
 
@@ -14,19 +14,19 @@ public class eleicao_municipal {
             "Antonio Jose Purcino da Silva",
             "08/10/1996",
             "Masculino",
-            "0",
+            0,
             "Nao",
-            "20",
+            20,
             "Vereador"
         );
 
-        candidatos candidatos3 = new candandidatos;(
+        candidatos candidatos3 = new candidatos(
             "Lucimar barros",
             "02/05/1987",
             "Feminino",
-            "0",
+            0,
             "Nao",
-            "44",
+            44,
             "Vereador"
         );
 
