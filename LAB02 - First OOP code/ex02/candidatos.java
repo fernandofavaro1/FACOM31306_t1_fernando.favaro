@@ -1,11 +1,11 @@
 public class candidatos {
-    private String nome;
-    private String data_de_nascimento;
-    private String genero;
-    private float bens;
-    private String reeleicao;
-    private int n_partido;
-    private String cargo;
+    String nome;
+    String data_de_nascimento;
+    String genero;
+    float bens;
+    String reeleicao;
+    int n_partido;
+    String cargo;
 
 
     public candidatos (String nome, String data_de_nascimento, String genero, float bens, String reeleicao, int n_partido, String cargo){
