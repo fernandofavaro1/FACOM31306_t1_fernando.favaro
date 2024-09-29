@@ -6,14 +6,8 @@ public class Produto{
         this.preco = preco;
         this.quantidade = quantidade;
     }
-    public boolean vendido(){
-        if (compra == true) {
-            System.out.println("Produto foi vendido");
+    public void vendido(){
+        System.out.println("Produto foi vendido");
             quantidade--;
-            return true;
-        } else {
-            System.out.println("Produto nao foi vendido");
-            return false;
-        }
     }
 }

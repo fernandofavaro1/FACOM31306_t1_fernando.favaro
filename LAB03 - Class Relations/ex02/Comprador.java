@@ -6,18 +6,17 @@ public class Comprador{
         this.verba = verba;
         this.interesse = interesse;
     }
-    public boolean compra (){
-        if (verba >= preco && interesse == true) {
+    public void compra (){
+        if (interesse == true && verba >= 7) {
             System.out.println("Produto comprado!");
-            verba -= preco;
-            return true;
-        }else System.out.println("Verba insuficiente, compra cancelada"); return false;
+        }else System.out.println("O comprador nao tem interesse no produto, compra cancelada");
     }
 
     public void interessado(){
         if (interesse == true) System.out.println("O cliente ja esta interessado no produto");
         else {
             System.out.println("O cliente ficou interessado no produto");
+            interesse = true;
         }
     }
 

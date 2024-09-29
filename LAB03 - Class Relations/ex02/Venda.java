@@ -1,22 +1,19 @@
 public class Venda{
-    Comprador carlos;
-    Produto arroz;
-    Vendedor valdir;
+    Comprador comprador;
+    Produto produto;
+    Vendedor vendedor;
 
-    public Venda (Comprador carlos, Produto arroz, Vendedor valdir){
-        this.carlos = carlos;
-        this.arroz = arroz;
-        this.valdir = valdir;
+    public Venda (Comprador comprador, Produto produto, Vendedor vendedor){
+        this.comprador = comprador;
+        this.produto = produto;
+        this.vendedor = vendedor;
     }
 
     public void VendaConcretizada(){
-        if (vendido == true && compra == true) System.out.println("Venda concretizada");
-        else System.out.println("Venda nao ocorreu ainda");
+        System.out.println("Venda concretizada");
     }
 
     public void CancelaVenda(){
-        if(vendido != true || compra != true){
             System.out.println("Compra cancelada");
-        }
     }
 }
