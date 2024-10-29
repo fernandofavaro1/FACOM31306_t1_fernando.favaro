@@ -4,7 +4,7 @@ public class Jogador{
     private double altura;
     private int peso;
 
-    public Jogador(String nome, int idde, double altura, int peso){
+    public Jogador(String nome, int idade, double altura, int peso){
         this.nome = nome;
         this.idade = idade;
         this.altura = altura;

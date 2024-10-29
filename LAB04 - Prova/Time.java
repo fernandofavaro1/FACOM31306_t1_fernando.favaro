@@ -1,36 +1,28 @@
 public class Time{
     private String nomeTime;
-    private Jogador j1;
-    private Jogador j2;
-    private Jogador s1;
+    private Jogador[] j;
 
     public Time(String nomeTime, Jogador j1, Jogador j2, Jogador s1){
         this.nomeTime = nomeTime;
-        this.j1 = j1;
-        this.j2 = j2;
-        this.s1;
+        this.j = new Jogador[3];
+        this.j[0] = j1;
+        this.j[1] = j2;
+        this.j[2] = s1;
     }
 
     public Time(String nomeTime, Jogador j1, Jogador j2){
         this.nomeTime = nomeTime;
-        this.j1 = j1;
-        this.j2 = j2;
+        this.j = new Jogador[2];
+        this.j[0] = j1;
+        this.j[1] = j2;
     }
 
-    public Jogador getS1() {
-        return s1;
+    public void setJogador(int i, Jogador j){
+        this.j[i] = j;
     }
 
-    public void setS1(Jogador s1) {
-        this.s1 = s1;
-    }
-
-    public Jogador getJ2() {
-        return j2;
-    }
-
-    public void setJ2(Jogador j2) {
-        this.j2 = j2;
+    public String getJogador(int i){
+        return "Nome: "+j[i].getNome()+", Idade: "+j[i].getIdade()+", Altura: "+j[i].getAltura()+", Peso: "+j[i].getPeso();
     }
 
     public String getNomeTime() {
@@ -41,27 +33,20 @@ public class Time{
         this.nomeTime = nomeTime;
     }
 
-    public Jogador getJ1() {
-        return j1;
-    }
-
-    public void setJ1(Jogador j1) {
-        this.j1 = j1;
-    }
-
     public double IdadeMedia(){
         double media;
-        if (s1 == null){
-            media = (j1.idade + j2.idade)/2;
+        if (j[2] == null){
+            media = (double) (j[0].getIdade() + j[1].getIdade()) /2;
             return media;
         } else{
-            media = (j1.idade + j2.idade + s1.idade)/3;
+            media = (double) (j[0].getIdade() + j[1].getIdade() + j[2].getIdade())/3;
             return media;
         }
     }
 
     public String toString(){
-        System.out.println("Titulares: "+ j1.toString()+ j2.toString());
-        if (s1 != null) System.out.println("Reserva: "+ s1.toString());
+        if (j[2] != null){
+            return "Nome do time: " + nomeTime + "\nTitulares:\n" + j[0].toString() + "\n" + j[1].toString() + "\nReserva:\n" + j[2].toString();
+        } else return "Nome do time: " + nomeTime + "\nTitulares:\n" + j[0].toString() + "\n" + j[1].toString();
     }
 }
