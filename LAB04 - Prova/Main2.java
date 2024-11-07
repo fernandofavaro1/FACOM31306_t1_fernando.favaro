@@ -33,9 +33,8 @@ public class Main2{
 
         int maior = 0;
 
-        for (int i = 0; i < n-1; i++) {
-            maior = i;
-            if (v[i].IdadeMedia() < v[i + 1].IdadeMedia()) maior = i+1;
+        for (int i = 1; i < n; i++) {
+            if (v[maior].IdadeMedia() < v[i].IdadeMedia()) maior = i;
         }
         System.out.println("O time que possui a maior media de idade eh: ");
         System.out.println(v[maior].toString());
